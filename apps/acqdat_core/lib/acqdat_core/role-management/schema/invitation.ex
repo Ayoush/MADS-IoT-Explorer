@@ -16,8 +16,6 @@ defmodule AcqdatCore.Schema.RoleManagement.Invitation do
     field(:salt, :string, null: false)
     field(:asset_ids, {:array, :integer})
     field(:app_ids, {:array, :integer})
-    field(:group_ids, {:array, :integer})
-    field(:policies, {:array, :map})
 
     # associations
     belongs_to(:inviter, User, on_replace: :delete)
@@ -28,7 +26,7 @@ defmodule AcqdatCore.Schema.RoleManagement.Invitation do
   end
 
   @required ~w(email token salt inviter_id org_id role_id)a
-  @optional ~w(asset_ids group_ids policies app_ids token_valid)a
+  @optional ~w(asset_ids app_ids token_valid)a
   @permitted @optional ++ @required
 
   @spec changeset(

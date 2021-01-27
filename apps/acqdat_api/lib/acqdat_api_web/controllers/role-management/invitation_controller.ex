@@ -1,5 +1,5 @@
 defmodule AcqdatApiWeb.RoleManagement.InvitationController do
-  use AcqdatApiWeb, :authorized_controller
+  use AcqdatApiWeb, :controller
   alias AcqdatApi.RoleManagement.Invitation
   import AcqdatApiWeb.Helpers
   import AcqdatApiWeb.Validators.RoleManagement.Invitation
@@ -25,10 +25,6 @@ defmodule AcqdatApiWeb.RoleManagement.InvitationController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -50,10 +46,6 @@ defmodule AcqdatApiWeb.RoleManagement.InvitationController do
       404 ->
         conn
         |> send_error(404, "User already exists with this email address")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -84,10 +76,6 @@ defmodule AcqdatApiWeb.RoleManagement.InvitationController do
       404 ->
         conn
         |> send_error(404, "User already exists with this email address")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -110,10 +98,6 @@ defmodule AcqdatApiWeb.RoleManagement.InvitationController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -136,10 +120,6 @@ defmodule AcqdatApiWeb.RoleManagement.InvitationController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 

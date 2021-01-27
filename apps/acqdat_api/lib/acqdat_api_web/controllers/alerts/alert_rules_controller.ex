@@ -3,7 +3,7 @@ defmodule AcqdatApiWeb.Alerts.AlertRulesController do
   ALERT RULES API.
   All the basic structure which support our alert creation logic will be drawn from their respective alert rule.
   """
-  use AcqdatApiWeb, :authorized_controller
+  use AcqdatApiWeb, :controller
   alias AcqdatApi.Alerts.AlertRules
   import AcqdatApiWeb.Helpers
   import AcqdatApiWeb.Validators.Alerts.AlertRules
@@ -32,10 +32,6 @@ defmodule AcqdatApiWeb.Alerts.AlertRulesController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -60,10 +56,6 @@ defmodule AcqdatApiWeb.Alerts.AlertRulesController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -88,10 +80,6 @@ defmodule AcqdatApiWeb.Alerts.AlertRulesController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -110,10 +98,6 @@ defmodule AcqdatApiWeb.Alerts.AlertRulesController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 end

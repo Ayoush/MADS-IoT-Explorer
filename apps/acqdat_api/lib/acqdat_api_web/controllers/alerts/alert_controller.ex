@@ -2,7 +2,7 @@ defmodule AcqdatApiWeb.Alerts.AlertController do
   @moduledoc """
   Contains API related to alerts which is been created using alert rules defined for a particular entity.
   """
-  use AcqdatApiWeb, :authorized_controller
+  use AcqdatApiWeb, :controller
   import AcqdatApiWeb.Helpers
   import AcqdatApiWeb.Validators.Alerts.Alert
   alias AcqdatApi.Alerts.Alert
@@ -31,10 +31,6 @@ defmodule AcqdatApiWeb.Alerts.AlertController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -59,10 +55,6 @@ defmodule AcqdatApiWeb.Alerts.AlertController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -81,10 +73,6 @@ defmodule AcqdatApiWeb.Alerts.AlertController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 end

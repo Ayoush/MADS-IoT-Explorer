@@ -88,15 +88,6 @@ defmodule AcqdatCore.Model.RoleManagement.User do
     ModelHelper.paginated_response(user_data_with_preloads, paginated_user_data)
   end
 
-  def load_user(org_id) do
-    query =
-      from(user in User,
-        where: user.org_id == ^org_id and user.role_id == 1 and user.is_deleted == false
-      )
-
-    Repo.all(query)
-  end
-
   @doc """
   Deletes a User.
 

@@ -1,5 +1,5 @@
 defmodule AcqdatApiWeb.EntityManagement.AssetTypeController do
-  use AcqdatApiWeb, :authorized_controller
+  use AcqdatApiWeb, :controller
   import AcqdatApiWeb.Helpers
   import AcqdatApiWeb.Validators.EntityManagement.AssetType
   alias AcqdatApi.EntityManagement.AssetType
@@ -34,10 +34,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetTypeController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -60,10 +56,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetTypeController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -86,10 +78,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetTypeController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -120,10 +108,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetTypeController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -154,10 +138,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetTypeController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 

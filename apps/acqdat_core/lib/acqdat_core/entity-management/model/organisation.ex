@@ -3,18 +3,7 @@ defmodule AcqdatCore.Model.EntityManagement.Organisation do
   alias AcqdatCore.Schema.EntityManagement.Organisation
   alias AcqdatCore.Model.EntityManagement.Project, as: ProjectModel
   alias AcqdatCore.Schema.RoleManagement.App
-  alias AcqdatCore.Model.Helper, as: ModelHelper
   alias AcqdatCore.Repo
-
-  def create(params) do
-    changeset = Organisation.changeset(%Organisation{}, params)
-    Repo.insert(changeset)
-  end
-
-  def update(org, params) do
-    changeset = Organisation.update_changeset(org, params)
-    Repo.update(changeset)
-  end
 
   def get(id) when is_integer(id) do
     case Repo.get(Organisation, id) do
@@ -24,19 +13,6 @@ defmodule AcqdatCore.Model.EntityManagement.Organisation do
       org ->
         {:ok, org}
     end
-  end
-
-  def get_all(%{page_size: page_size, page_number: page_number}) do
-    Organisation |> order_by(:id) |> Repo.paginate(page: page_number, page_size: page_size)
-  end
-
-  def get_all(%{page_size: page_size, page_number: page_number}, preloads) do
-    paginated_org_data =
-      Organisation |> order_by(:id) |> Repo.paginate(page: page_number, page_size: page_size)
-
-    org_data_with_preloads = paginated_org_data.entries |> Repo.preload(preloads)
-
-    ModelHelper.paginated_response(org_data_with_preloads, paginated_org_data)
   end
 
   def get(params) when is_map(params) do

@@ -1,5 +1,5 @@
 defmodule AcqdatApiWeb.EntityManagement.AssetController do
-  use AcqdatApiWeb, :authorized_controller
+  use AcqdatApiWeb, :controller
   alias AcqdatApi.EntityManagement.Asset
   alias AcqdatCore.Model.EntityManagement.AssetType, as: ATModel
   alias AcqdatApi.ElasticSearch
@@ -21,10 +21,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -53,10 +49,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -81,10 +73,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -107,10 +95,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -131,10 +115,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -157,10 +137,6 @@ defmodule AcqdatApiWeb.EntityManagement.AssetController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 

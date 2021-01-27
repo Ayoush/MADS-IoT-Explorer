@@ -2,7 +2,7 @@ defmodule AcqdatApiWeb.Alerts.PolicyController do
   @moduledoc """
   All the apis related to Policy
   """
-  use AcqdatApiWeb, :authorized_controller
+  use AcqdatApiWeb, :controller
   alias AcqdatApi.Alerts.Policy
   plug AcqdatApiWeb.Plug.LoadOrg
 

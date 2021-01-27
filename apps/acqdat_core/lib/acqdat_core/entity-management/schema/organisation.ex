@@ -4,11 +4,9 @@ defmodule AcqdatCore.Schema.EntityManagement.Organisation do
 
   A organisation is the topmost node of the heirarchy and will not have any parent.
   """
-  import Ecto.Query
   use AcqdatCore.Schema
   alias AcqdatCore.Schema.RoleManagement.App
   alias AcqdatCore.Schema.EntityManagement.Project
-  alias AcqdatCore.Repo
 
   # use AsNestedSet, scope: [:id]
   @typedoc """
@@ -50,7 +48,6 @@ defmodule AcqdatCore.Schema.EntityManagement.Organisation do
     |> add_uuid()
     |> validate_required(@required_params)
     |> common_changeset()
-    |> add_apps_changeset(params[:app_ids] || [])
   end
 
   def update_changeset(%__MODULE__{} = organisation, params) do
@@ -64,12 +61,5 @@ defmodule AcqdatCore.Schema.EntityManagement.Organisation do
     changeset
     |> unique_constraint(:name, name: :acqdat_organisation_name_index)
     |> unique_constraint(:uuid, name: :acqdat_organisation_uuid_index)
-  end
-
-  defp add_apps_changeset(organisation, app_ids) do
-    apps = Repo.all(from(app in App, where: app.id in ^app_ids))
-
-    organisation
-    |> put_assoc(:apps, Enum.map(apps, &change/1))
   end
 end

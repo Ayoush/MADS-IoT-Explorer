@@ -27,11 +27,11 @@ defmodule AcqdatCore.Model.IotManager.GatewayDataDump do
       from(data_dump in GatewayDataDump,
         where:
           data_dump.project_uuid == ^project_uuid and
-            data_dump.org_uuid == ^org_uuid and data_dump.gateway_uuid == ^gateway_uuid,
-        order_by: [desc: data_dump.inserted_timestamp]
+            data_dump.org_uuid == ^org_uuid and data_dump.gateway_uuid == ^gateway_uuid
       )
 
-    paginated_data_dump = query |> Repo.paginate(page: page_number, page_size: page_size)
+    paginated_data_dump =
+      query |> order_by(:id) |> Repo.paginate(page: page_number, page_size: page_size)
 
     data_dump_with_preloads = paginated_data_dump.entries |> Repo.preload(preloads)
 

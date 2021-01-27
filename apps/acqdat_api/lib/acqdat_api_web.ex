@@ -27,17 +27,6 @@ defmodule AcqdatApiWeb do
     end
   end
 
-  def authorized_controller do
-    quote do
-      use Phoenix.Controller, namespace: AcqdatApiWeb
-
-      import Plug.Conn
-      import AcqdatApiWeb.Gettext
-      alias AcqdatApiWeb.Router.Helpers, as: Routes
-      plug AcqdatApiWeb.ApiAccessAuth
-    end
-  end
-
   def view do
     quote do
       use Phoenix.View,

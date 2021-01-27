@@ -56,7 +56,7 @@ defmodule AcqdatCore.Schema.RoleManagement.User do
 
   def common_changeset(changeset, _params) do
     changeset
-    |> unique_constraint(:email, name: :users_email_index)
+    |> unique_constraint(:email, name: :unique_email)
     |> validate_confirmation(:password)
     |> validate_length(:password, min: @password_min_length)
     |> validate_format(:email, ~r/@/)

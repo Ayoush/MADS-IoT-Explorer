@@ -1,4 +1,3 @@
-
 defmodule AcqdatCore.Repo.Migrations.EnableTimescaleExtensions do
   use Ecto.Migration
 

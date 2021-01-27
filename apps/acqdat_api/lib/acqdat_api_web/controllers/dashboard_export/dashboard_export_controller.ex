@@ -1,5 +1,5 @@
-defmodule AcqdatApiWeb.DashboardManagement.DashboardExportController do
-  use AcqdatApiWeb, :authorized_controller
+defmodule AcqdatApiWeb.DashboardExport.DashboardExportController do
+  use AcqdatApiWeb, :controller
   import AcqdatApiWeb.Helpers
   alias AcqdatApi.DashboardExport.DashboardExport
   alias AcqdatApi.DashboardManagement.Panel
@@ -32,10 +32,6 @@ defmodule AcqdatApiWeb.DashboardManagement.DashboardExportController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -62,10 +58,6 @@ defmodule AcqdatApiWeb.DashboardManagement.DashboardExportController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 
@@ -79,10 +71,6 @@ defmodule AcqdatApiWeb.DashboardManagement.DashboardExportController do
       404 ->
         conn
         |> send_error(404, "Resource Not Found")
-
-      401 ->
-        conn
-        |> send_error(401, "Unauthorized")
     end
   end
 

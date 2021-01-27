@@ -10,9 +10,9 @@ defmodule AcqdatCore.Seed.RoleManagement.User do
     params = %{
       first_name: "Datakrew",
       last_name: "Admin",
-      email: System.get_env("USER_EMAIL"),
-      password: System.get_env("USER_PASSWORD"),
-      password_confirmation: System.get_env("USER_PASSWORD"),
+      email: "admin@datakrew.com",
+      password: "mads#1234",
+      password_confirmation: "mads#1234",
       org_id: org.id,
       role_id: role.id,
       is_invited: false

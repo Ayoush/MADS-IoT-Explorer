@@ -79,9 +79,7 @@ defmodule AcqdatCore.Support.Factory do
       salt: UUID.uuid1(:hex),
       inviter: build(:user),
       role: build(:role),
-      org: build(:organisation),
-      group_ids: [],
-      policies: []
+      org: build(:organisation)
     }
   end
 
